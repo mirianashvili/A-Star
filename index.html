@@ -7,21 +7,25 @@
 </head>
 <body>
   <div class="grid" id="board"></div>
-
+  <button onClick="buttonClick()">Button</button>
   <script src="assets/js/draw.js"></script>
   <script src="assets/js/Node.js"></script>
   <script src="assets/js/PQ.js"></script>
   <script src="assets/js/algorithm.js"></script>
   <script>
     drawCells(20,20)
-    markTarget(2,3,false)
-    markTarget(0,10,true)
-    //markWall(3,4)
+    markTarget(0,0,false)
+    markTarget(9,10,true)
+    markWall(3,4)
     markWall(4,4)
     markWall(5,4)
     markWall(6,4)
+    markWall(7,4)
     markWall(12,12)
-    AStar(data)
+    function buttonClick(){
+      AStar(data)
+      console.log()
+    }
   </script>
 </body>
 </html>

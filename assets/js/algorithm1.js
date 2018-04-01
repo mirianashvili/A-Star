@@ -19,10 +19,10 @@ function AStar(data){
   opened_list.push(startNode);
   opened.push(startNode);
 
-  while(opened_list.length > 0){
+  while(opened.getData().length > 0){
     let node = opened.pop();
     closed_list.push(node)
-    
+    opened_list = opened.getData()
     if(node.Equals(goalNode)){
       let path = [];
       let current = node;
@@ -36,7 +36,6 @@ function AStar(data){
       for(let i = path.length - 2 ; i >= 1 ; i--){
         drawPath(path[i].x,path[i].y);
       }
-
       break;
     }
 
@@ -48,7 +47,7 @@ function AStar(data){
       let walls = data.walls;
       let isWall = false;
       for(let j = 0 ; j < walls.length ; j++){
-        if(walls[j].x === x && walls[j].y === y){ isWall = !isWall; break;}
+        if(walls[j].x === x && walls[j].y === y){ isWall = true; break;}
       }
       if(!isWall){
         children.push(new Node(node,x,y));
@@ -65,7 +64,7 @@ function AStar(data){
       }
       if(find) continue;
       child.setG(node.getG() + 1);
-      child.setH(Math.pow(child.getX() - node.getX(),2) + Math.pow(child.getY() - node.getY(),2));
+      child.setH(Math.pow(child.getX() - goalNode.getX(),2) + Math.pow(child.getY() - goalNode.getY(),2));
       child.setF(child.getG() + child.getH());
 
       find = false;
@@ -73,15 +72,15 @@ function AStar(data){
       for(let j = 0 ; j < opened_list.length ; j++){
         if(child.Equals(opened_list[j]) && child.getF() > opened_list[j].getF()){
           find = true;
+          break;
         }
       }
       if(!find){
-        opened_list.push(child);
         opened.push(child);
+        opened_list = [];
+        opened_list = opened.getData()
+        drawChild(child.getX(),child.getY())
       }
     }
    }
-
-
-
 }

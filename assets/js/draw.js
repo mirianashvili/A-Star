@@ -59,6 +59,7 @@ function drawPath(col,row){
 }
 
 function drawChild(col,row){
+  if(col == data.Goal.x && row == data.Goal.y) return;
   var color = 'gray';
   var id = 'cell_' + col + "_" + row;
   var object = document.getElementById(id);

@@ -6,13 +6,14 @@ class PQ{
   left(i){ return 2 * i + 1;}
   right(i) { return 2 * i + 2;}
 
-  parent(i) { return (i - 1) / 2;}
+  parent(i) { return Math.floor((i - 1) / 2);}
 
   heapify(i){
     let l = this.left(i);
     let r = this.right(i);
     let n = this.data.length;
     let largest;
+
     if(l < n && this.data[l].getF() < this.data[i].getF()){
       largest = l;
     }else{
@@ -33,16 +34,19 @@ class PQ{
 
   make_heap(){
     let n = this.data.length;
-    for(let i = (n - 2) / 2 ; i >= 0 ; i--){
+    for(let i = Math.floor((n - 2) / 2) ; i >= 0 ; i--){
       this.heapify(i);
     }
+  }
+
+  getData(){
+    return this.data;
   }
 
   pop(){
     let tmp = this.data[0];
     this.data[0] = this.data[this.data.length - 1];
-    this.data[this.data.length  - 1] = tmp;
-    let pop = this.data.pop();
+    this.data.splice(this.data.length - 1,1)
     this.heapify(0);
     return tmp;
   }
@@ -50,7 +54,7 @@ class PQ{
   push(item){
     this.data.push(item)
     let i = this.data.length
-    while(i >= 0 && this.data[this.parent(i)] < this.data[i]){
+    while(i > 0 && this.data[this.parent(i)] < this.data[i]){
       let tmp = this.data[i];
       this.data[i] = this.data[this.parent(i)];
       this.data[this.parent(i)] = tmp;
