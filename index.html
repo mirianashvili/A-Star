@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>A*</title>
+  <link rel="stylesheet" href="assets/css/master.css">
+</head>
+<body>
+  <div class="grid" id="board"></div>
+
+  <script src="assets/js/draw.js"></script>
+  <script src="assets/js/Node.js"></script>
+  <script src="assets/js/PQ.js"></script>
+  <script src="assets/js/algorithm.js"></script>
+  <script>
+    drawCells(20,20)
+    markTarget(2,3,false)
+    markTarget(0,10,true)
+    //markWall(3,4)
+    markWall(4,4)
+    markWall(5,4)
+    markWall(6,4)
+    markWall(12,12)
+    AStar(data)
+  </script>
+</body>
+</html>

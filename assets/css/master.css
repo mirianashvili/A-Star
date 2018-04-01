@@ -1,0 +1,18 @@
+
+*{
+  padding:0px;
+  margin:0 auto;
+}
+
+.grid{
+  width:450px;
+  height:600px;
+}
+
+.cell{
+  width:20px;
+  height:20px;
+  backgroud:#ebebeb;
+  border:1px solid #000;
+  float:left;
+}
