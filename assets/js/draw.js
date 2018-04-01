@@ -1,4 +1,8 @@
 var data = {};
+var colors = {
+  "goal":'#4b5a72',
+  "start":"#bc4b16"
+}
 
 function drawCells(col,row){
   var object = document.getElementById('board');
@@ -16,15 +20,15 @@ function drawCells(col,row){
 }
 
 function markTarget(col,row,isGoal){
-  var color = 'blue';
+  var colorKey = 'start';
   var id = 'cell_' + col + "_" + row;
 
   if(isGoal === true){
-    color = 'red';
+    colorKey = 'goal';
   }
 
   var object = document.getElementById(id);
-  object.style.backgroundColor = color;
+  object.style.backgroundColor = colors[colorKey];
   saveTarget(col,row,isGoal);
 }
 

@@ -2,30 +2,71 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>A*</title>
+  <title>A* Path Finding</title>
   <link rel="stylesheet" href="assets/css/master.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="grid" id="board"></div>
-  <button onClick="buttonClick()">Button</button>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">A* Path Finding</a>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <!--board-->
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <div class="grid" id="board"></div>
+          </div>
+        </div>
+      </div>
+      <!--manage board-->
+      <div class="col-md-3">
+        <h1>Menu</h1>
+
+        <div class="list-group">
+          <!--start point-->
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5>Add Start</h5>
+            </div>
+            <p class="mb-1">You can add only one start point</p>
+          </a>
+          <!--goal point-->
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5>Add Goal</h5>
+            </div>
+            <p class="mb-1">You can add only one goal point</p>
+          </a>
+          <!--wall point-->
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5>Add Wall</h5>
+            </div>
+            <p class="mb-1">You can add several walls</p>
+          </a>
+          <!--remove-->
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5>Remove</h5>
+            </div>
+            <p class="mb-1">Remove start and goal point and walls</p>
+          </a>
+        </div>
+
+
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="assets/js/draw.js"></script>
   <script src="assets/js/Node.js"></script>
   <script src="assets/js/PQ.js"></script>
   <script src="assets/js/algorithm.js"></script>
-  <script>
-    drawCells(20,20)
-    markTarget(0,0,false)
-    markTarget(9,10,true)
-    markWall(3,4)
-    markWall(4,4)
-    markWall(5,4)
-    markWall(6,4)
-    markWall(7,4)
-    markWall(12,12)
-    function buttonClick(){
-      AStar(data)
-      console.log()
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

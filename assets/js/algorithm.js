@@ -17,6 +17,7 @@ function AStar(data){
 
 
   opened_list.push(startNode);
+  let time = 1;
 
   while(opened_list.length > 0){
 
@@ -39,20 +40,26 @@ function AStar(data){
     }
     opened_list = new_array;
     closed_list.push(node)
-    //drawChild(node.getX(),node.getY())
-    if(node.Equals(goalNode)){
-      let path = [];
-      let current = node;
-      while(current){
-        var col = current.getX();
-        var row = current.getY();
-        current = current.getParent();
-        path.push({x:col,y:row});
-      }
 
-      for(let i = path.length - 2 ; i >= 1 ; i--){
-        drawPath(path[i].x,path[i].y);
-      }
+    if(node.Equals(goalNode)){
+      setTimeout(()=>{
+        let path = [];
+        let current = node;
+        while(current){
+          var col = current.getX();
+          var row = current.getY();
+          current = current.getParent();
+          path.push({x:col,y:row});
+        }
+
+        for(let i = path.length - 2 ; i >= 1 ; i--){
+          setTimeout(() => {
+            drawPath(path[i].x,path[i].y);
+          }, 500 * (path.length - 2 - i));
+        }
+
+      },1000)
+
 
       break;
     }
@@ -93,7 +100,8 @@ function AStar(data){
       }
       if(!find){
         opened_list.push(child);
-        drawChild(child.getX(),child.getY())
+        setTimeout(()=>{drawChild(child.getX(),child.getY())},time * 50)
+        time++;
       }
     }
 
