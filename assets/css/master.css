@@ -1,15 +1,17 @@
-
-
-
 .grid{
-  width:419px;
-  height:419px;
+  width: 502px;
+  height:502px;
+  border:1px solid rgba(0,0,0,.125);
 }
 
 .cell{
-  width:20px;
-  height:20px;
+  width:25px;
+  height:25px;
   backgroud:#ebebeb;
-  border:1px solid #000;
+  border:1px solid rgba(0,0,0,.125);
   float:left;
+}
+
+.container{
+  margin-top:20px;
 }

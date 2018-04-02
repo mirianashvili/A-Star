@@ -7,66 +7,38 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">A* Path Finding</a>
-  </nav>
-
+  <!--menu-->
+  <div class="container">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand pull-center">A* Path Finding</a>
+    </nav>
+  </div>
   <div class="container">
     <div class="row">
       <!--board-->
       <div class="col-md-9">
-        <div class="card">
-          <div class="card-body">
-            <div class="grid" id="board"></div>
-          </div>
-        </div>
+        <div class="grid" id="board"></div>
       </div>
       <!--manage board-->
       <div class="col-md-3">
-        <h1>Menu</h1>
-
-        <div class="list-group">
-          <!--start point-->
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-            <div class="d-flex w-100 justify-content-between">
-              <h5>Add Start</h5>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Options</h4>
+            <!--buttons--->
+            <div class="card-text">
+              <button class="btn btn-dark btn-block" id="AddStartButton">Add Start</button>
+              <button class="btn btn-info btn-block" id="AddGoalButton">Add Goal</button>
+              <button class="btn btn-success btn-block" id="GoButton">Go</button>
             </div>
-            <p class="mb-1">You can add only one start point</p>
-          </a>
-          <!--goal point-->
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5>Add Goal</h5>
-            </div>
-            <p class="mb-1">You can add only one goal point</p>
-          </a>
-          <!--wall point-->
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5>Add Wall</h5>
-            </div>
-            <p class="mb-1">You can add several walls</p>
-          </a>
-          <!--remove-->
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5>Remove</h5>
-            </div>
-            <p class="mb-1">Remove start and goal point and walls</p>
-          </a>
+          </div>
         </div>
-
-
-
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="assets/js/draw.js"></script>
+  <script src="assets/js/Draw.js"></script>
   <script src="assets/js/Node.js"></script>
-  <script src="assets/js/PQ.js"></script>
-  <script src="assets/js/algorithm.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/Algorithm.js"></script>
+  <script src="assets/js/App.js"></script>
 </body>
 </html>

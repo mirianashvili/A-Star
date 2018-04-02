@@ -1,7 +1,9 @@
 var data = {};
 var colors = {
-  "goal":'#4b5a72',
-  "start":"#bc4b16"
+  "goal":'#28a745',
+  "start":"#17a2b8",
+  "wall":"#444",
+  "path":"#ababab"
 }
 
 function drawCells(col,row){
@@ -41,7 +43,7 @@ function saveTarget(col,row,isGoal){
 }
 
 function markWall(col,row){
-  var color = '#000';
+  var color = colors['wall'];
   var id = 'cell_' + col + "_" + row;
   var object = document.getElementById(id);
   object.style.backgroundColor = color;
@@ -64,7 +66,14 @@ function drawPath(col,row){
 
 function drawChild(col,row){
   if(col == data.Goal.x && row == data.Goal.y) return;
-  var color = 'gray';
+  var color = colors["path"];
+  var id = 'cell_' + col + "_" + row;
+  var object = document.getElementById(id);
+  object.style.backgroundColor = color;
+}
+
+function removeColor(col,row){
+  var color = 'transparent';
   var id = 'cell_' + col + "_" + row;
   var object = document.getElementById(id);
   object.style.backgroundColor = color;
