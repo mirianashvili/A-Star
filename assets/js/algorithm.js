@@ -104,6 +104,5 @@ function AStar(data){
         time++;
       }
     }
-
    }
 }

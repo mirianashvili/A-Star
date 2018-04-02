@@ -1,2 +1,2 @@
 # A* Path Finding Algorithm
-[View](https://www.mirianashvili.github.io/A-Star)
+[View](https://mirianashvili.github.io/A-Star)
