@@ -6,6 +6,25 @@ var colors = {
   "path":"#ababab"
 }
 
+function init(){
+  drawCells(20,20)
+  markTarget(8,0,false)
+  markTarget(8,10,true)
+  markWall(3,4)
+  markWall(4,4)
+  markWall(5,4)
+  markWall(6,4)
+  markWall(7,4)
+  markWall(12,12)
+}
+
+function clearBoard(){
+  var object = document.getElementById('board');
+  object.innerHTML = "";
+  //redraw cells again
+  drawCells(data.col,data.row)
+}
+
 function drawCells(col,row){
   var object = document.getElementById('board');
   for(var i = 0 ; i < col ; i++){
@@ -77,4 +96,38 @@ function removeColor(col,row){
   var id = 'cell_' + col + "_" + row;
   var object = document.getElementById(id);
   object.style.backgroundColor = color;
+}
+
+function removeValue(col,row){
+  if(data.Start != undefined){
+    if(data.Start.x == col && data.Start.y == row) {
+      delete data.Start;
+      console.log(data);
+      return;
+    }
+  }
+  if(data.Goal != undefined){
+    if(data.Goal.x == col && data.Goal.y == row) {
+      delete data.Goal;
+      return;
+    }
+  }
+
+  let walls = data.walls;
+  let new_walls = [];
+
+  for(let i = 0 ; i < walls.length ; i++){
+    if(walls[i].x == col && walls[i].y == row){
+      continue;
+    }
+    new_walls.push(walls[i]);
+  }
+
+  data.walls = new_walls;
+
+}
+
+function UsedBoard(col,row){
+  let name = "#cell_" + col + "_" + row;
+  return $(name).css('color') === 'transparent';
 }
