@@ -1,47 +1,55 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <title>A* Path Finding</title>
-  <link rel="stylesheet" href="assets/css/master.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-  <!--menu-->
-  <div class="container">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand pull-center">A* Path Finding</a>
-    </nav>
-  </div>
-  <div class="container">
-    <div class="row">
-      <!--board-->
-      <div class="col-md-9">
-        <div class="grid" id="board"></div>
-      </div>
-      <!--manage board-->
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Options</h4>
-            <!--buttons--->
-            <div class="card-text">
-              <button class="btn btn-info btn-block" id="AddStartButton">Add Start</button>
-              <button class="btn btn-success btn-block" id="AddGoalButton">Add Goal</button>
-              <button class="btn btn-dark btn-block" id="AddWallButton">Add Wall</button>
-              <button class="btn btn-danger btn-block" id="ClearButton">Clear Board</button>
-              <button class="btn btn-secondary btn-block" id="RemoveCellButton">Remove Cell</button>
-              <button class="btn btn-success btn-block" id="GoButton">Go</button>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="assets/js/draw.js"></script>
-  <script src="assets/js/Node.js"></script>
-  <script src="assets/js/algorithm.js"></script>
-  <script src="assets/js/App.js"></script>
+<head>
+	<meta charset="utf-8" />
+	<title>A* Path Finding</title>
+	<link rel="stylesheet" href="assets/css/master.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+	<!--menu-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">A* Path Finding algorithm</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+
+
+	<div class="container">
+		<div class="row">
+			<!--board-->
+			<div class="col-md-9">
+				<div class="grid" id="board"></div>
+			</div>
+			<!--manage board-->
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Options</h4>
+						<!--buttons--->
+						<div class="card-text">
+							<button class="btn btn-info btn-block" id="AddStartButton">Add Start</button>
+							<button class="btn btn-success btn-block" id="AddGoalButton">Add Goal</button>
+							<button class="btn btn-dark btn-block" id="AddWallButton">Add Wall</button>
+							<button class="btn btn-danger btn-block" id="ClearButton">Clear Board</button>
+							<button class="btn btn-secondary btn-block" id="RemoveCellButton">Remove Cell</button>
+							<button class="btn btn-success btn-block" id="GoButton">Go</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="assets/js/draw.js"></script>
+		<script src="assets/js/Node.js"></script>
+		<script src="assets/js/algorithm.js"></script>
+		<script src="assets/js/App.js"></script>
 </body>
+
 </html>
